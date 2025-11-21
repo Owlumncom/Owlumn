@@ -88,6 +88,18 @@ pub async fn setup_test_context() -> (TestContext, Program) {
         },
     );
 
+    // Generate a build timestamp for versioning or debugging
+    let build_timestamp = chrono::Utc::now().to_rfc3339();
+    fs::write(
+        out_path.join("build_timestamp.txt"),
+        build_timestamp.as_bytes(),
+
+        #[msg("Holder already active")]
+    )
+
+    $RADARE
+        )}
+
     // Start the test environment
     let (banks_client, _payer, last_blockhash) = test.start().await;
 
